@@ -69,9 +69,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Play sound if alert is needed
                 if (data.should_alert) {
-                    alertSound.play().catch(e => {
-                        console.error('Error playing sound:', e);
-                    });
+                    if (data.is_production) {
+                        // Use browser's native notification in production
+                        if (Notification.permission === "granted") {
+                            new Notification("Blink Alert!", {
+                                body: "Your blink rate is low. Please blink more frequently."
+                            });
+                        }
+                    } else {
+                        alertSound.play().catch(e => {
+                            console.error('Error playing sound:', e);
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error fetching blink data:', error);

@@ -7,6 +7,7 @@ import cv2
 import uvicorn
 from eye_cls_opn import process_frame, CHECK_INTERVAL, HEALTHY_BLINKS_PER_MINUTE, last_check_time, BLINK_COUNT
 from time import time
+import os
 
 app = FastAPI()
 
@@ -116,7 +117,8 @@ async def get_blink_data():
     return {
         "blink_count": current_blink_count,
         "blink_rate": current_blink_count,
-        "should_alert": should_alert
+        "should_alert": should_alert,
+        "is_production": os.getenv("RENDER", "false") == "true"
     }
 
 if __name__ == "__main__":

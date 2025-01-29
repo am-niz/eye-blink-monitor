@@ -1,6 +1,16 @@
+# Virtual Environment
+eye_cls_opn_env/
+venv/
+env/
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.py[cod]
+
+# OS files
+.DS_Store
 .env
-venv/
-eye_cls_opn_env/
-.DS_Store 
