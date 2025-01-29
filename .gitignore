@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+venv/
+eye_cls_opn_env/
+.DS_Store 

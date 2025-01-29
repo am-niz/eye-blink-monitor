@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeCare - Blink Monitor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="permissions-policy" content="camera=*">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>EyeCare</h1>
+            <p>Your Digital Eye Health Assistant</p>
+        </header>
+        
+        <div class="video-container">
+            <img id="video_feed" src="/video_feed" alt="Video Feed">
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Blink Count</h3>
+                <p id="blinkCount">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Blink Rate</h3>
+                <p id="blinkRate">0 per minute</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">Start Monitoring</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html> 
